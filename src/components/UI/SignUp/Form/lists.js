@@ -9,6 +9,11 @@ export const cityList = [
     { id: 5, name: 'Libya' },
 ]
 
+
+export const genderList = [
+    {id: 1, name: 'Male', value:'M'},
+    {id: 2, name: 'Female', value:'F'}
+]
 export const textInputs = [
     { id: 1, key_name: 'name', placeholder: 'Enter your name', type: 'text', err_text: 'Please enter a valid name' },
     { id: 2, key_name: 'email', placeholder: 'Email', type: 'email', img: emailPic, err_text: 'Please enter a valid email address' },

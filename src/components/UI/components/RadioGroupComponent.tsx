@@ -4,34 +4,29 @@ import styled from 'styled-components';
 interface Props {
     myChangeHandler: Function
     key_name: string
+    items: any
 }
 
-export const RadioGroupComponent = ({myChangeHandler, key_name}: Props) => {
+export const RadioGroupComponent = ({myChangeHandler, items, key_name}: Props) => {
     return (
         <RadioGroup>
-        <div>
-            <input type="radio"
-                id={'male'}
-                value={'M'}
-                defaultChecked={false}
-                name={key_name} 
-                onChange={(e) =>  myChangeHandler(e.target.value, key_name)}
-                />
-                 <label htmlFor={'male'}>
-                Male
-            </label>
-        </div>
-        <div>
-            <input type="radio"
-                id={'female'}
-                value={'F'}
-                defaultChecked={false}
-                onChange={(e) =>  myChangeHandler(e.target.value, key_name)}
-                name={key_name} />
-            <label htmlFor={'female'}>
-                Female
-            </label>
-        </div>
+        {items.map((item:any)=>{
+            return(
+                <div key={item.id}>
+                    <input type="radio"
+                        id={item.id}
+                        value={item.value}
+                        defaultChecked={false}
+                        name={key_name} 
+                        onChange={(e) =>  myChangeHandler(e.target.value, key_name)}
+                        />
+                    <label htmlFor={item.id}>
+                    {item.name}
+                </label>
+            </div>
+            )
+        })
+            }
     </RadioGroup>
     )
 }

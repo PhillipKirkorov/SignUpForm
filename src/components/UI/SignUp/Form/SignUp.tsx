@@ -4,7 +4,7 @@ import {SIGN_UP_USER_MUTATION} from '../../../../GraphQL/Mutation'
 import styled from 'styled-components';
 import CheckBoxComponent from "../../components/CheckBoxComponent";
 import { RadioGroupComponent } from "../../components/RadioGroupComponent";
-import { textInputs } from "./lists";
+import { textInputs, genderList} from "./lists";
 //@ts-ignore
 import { validator, fieldChecker} from "./functions.ts";
 import DropDownComponent from "../../components/DropDownComponent";
@@ -85,7 +85,7 @@ const SignUp: React.FC = (): JSX.Element => {
                 <ErrorComponent errors={errors} key_name={'city'} err_text={'You must select your country'}/>
 
 
-                <RadioGroupComponent key_name={'sex'} myChangeHandler={myChangeHandler}/>
+                <RadioGroupComponent key_name={'sex'} items={genderList} myChangeHandler={myChangeHandler}/>
                 <ErrorComponent errors={errors} key_name={'sex'} err_text={'You must select the gender'}/>
 
 
