@@ -46,7 +46,7 @@ cursor: pointer;
   img{
         transform: ${(p: DropDownProps) => p.open ? '' : 'rotateX(180deg)'};
         margin-left: auto;
-        margin-right: 0px;
+        margin-right: 0px !important;
   }
 `;
 
